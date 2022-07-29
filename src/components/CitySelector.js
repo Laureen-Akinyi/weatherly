@@ -1,9 +1,25 @@
-import React, { useState } from "react";
-import { Row, Col, FormControl, Button } from "react-bootstrap";
+import React, {useState} from 'react';
+import {Row, Col, FormControl, Button} from 'react-bootstrap';
+import { API_KEY, API_BASE_URL } from "../apis/config";
 
-const CitySelector = ({ onSearch }) => {
-  const [city, setCity] = useState("");
 
+
+const CitySelector = () => {
+  const [city, setCity] = useState('');
+const onSearch = () => {
+  fetch(
+    `${API_BASE_URL}/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`
+  )
+    .then((response) => response.json())
+    // update the results
+    .then((results) => setResults(results));
+};
+
+const onKeyDown = (event) => {
+  if (event.keyCode === 13) {
+    onSearch();
+  }
+};
   return (
     <>
       <Row>
@@ -13,19 +29,23 @@ const CitySelector = ({ onSearch }) => {
       </Row>
 
       <Row>
-        <Col xs={4}>
+        {/* xs={4} takes the one third  of the page*/}
+        <Col xs={4} className="text-center">
           <FormControl
             placeholder="Enter city"
+            // update city value with the user's input
             onChange={(event) => setCity(event.target.value)}
+            // value will be the currently selected city
             value={city}
+            onKeyDown={onKeyDown}
           />
         </Col>
       </Row>
 
       <Row>
         <Col>
-          {/* don't forget to edit our function  */}
-          <Button onClick={() => onSearch(city)}>Check Weather</Button>
+          {/* event handler for button click */}
+          <Button onClick={onSearch}>Check Weather</Button>
         </Col>
       </Row>
     </>
