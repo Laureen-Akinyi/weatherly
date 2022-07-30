@@ -1,5 +1,11 @@
+body{
+      background-image: url(./assets/noaa-kcvlb727mn8-unsplash.jpg);
+      background-size: cover;
+
+}
 .App {
   text-align: center;
+
 }
 
 .row {

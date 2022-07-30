@@ -26,7 +26,6 @@ const App = () => {
           setUrl(`${API_BASE_URL}/data/2.5/forecast?q=${city}&appid=${API_KEY}`)
         }
       />
-      {/* {data && <WeatherList weathers={data.list} />} */}
       {getContent()}
     </Container>
   );
