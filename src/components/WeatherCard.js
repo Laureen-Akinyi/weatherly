@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 
-const WeatherCard = ({ dt, temp_min, temp_max, main, icon,description }) => {
+const WeatherCard = ({ dt, temp_min, temp_max, main, icon }) => {
   // create a date object with Date class constructor
   const date = new Date(dt);
   return (
@@ -21,7 +21,6 @@ const WeatherCard = ({ dt, temp_min, temp_max, main, icon,description }) => {
         <p>Min Temp: {temp_min}</p>
         {/* maximum temperature */}
         <p>Max Temp: {temp_max}</p>
-        
       </Card.Body>
     </Card>
   );
