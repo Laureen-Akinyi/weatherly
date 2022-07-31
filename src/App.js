@@ -3,7 +3,7 @@ import CitySelector from "./components/CitySelector";
 import UseFetch from "./hooks/UseFetch";
 import "./App.css";
 import { Container } from "react-bootstrap";
-import { API_KEY, API_BASE_URL } from "./apis/config";
+import { API_KEY, API_BASE_URL }  from "./apis/config";
 import WeatherList from "./components/WeatherList";
 
 
