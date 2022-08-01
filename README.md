@@ -2,7 +2,7 @@
 Weatherly.
 
 Weatherly react application provides updates for the 
-next five days weather data for a specified city.
+next five days weather data for a city.
 
 
 
